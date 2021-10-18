@@ -20,6 +20,7 @@ main {
   top: 0;
   left: 0;
   font-size: 2.5rem;
+  padding: 1rem;
 }
 
 .first {
@@ -27,7 +28,25 @@ main {
 }
 
 .first img {
-  padding: 2rem;
+}
+
+.first p {
+  font-family: neusa-next-std, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #C39642;
+  font-size: 1.25rem;
+}
+
+.enter button {
+  font-family: neusa-next-std, sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #C39642;
+  background-color: #2c2c2c;
+  border: 2px solid #C39642;
+  padding: 1rem;
+  border-radius: 12px;
 }
 
 .open-sesame {
