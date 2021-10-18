@@ -2,9 +2,9 @@
 // add the latitude and longitude for your location one lines 6 and 7
 // move on to adding your data requests on line 22
 function weatherBalloon() {
-  var key = '';
-  var lat = '';
-  var lon = '';
+  var key = '43dab0cca2b7a0399e67de91eece0340';
+  var lat = '42.5195';
+  var lon = '-70.8967';
   fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=' + key)  
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
@@ -23,7 +23,18 @@ $('.current_weather').click(function(){$('.home').removeClass('open-sesame');})
 // display weather information
 function drawWeather( d ) {
 
-  // add your specfic weather requests here
+$('.current_temp h1').html( convertTemp(d.current.temp) );
+
+$('._6day .day1 h3').html( displayDay(1));
+$('._6day .day1 .icon').html( printGraphic(d.daily[1].weather[0].description));
+$('._6day .day1 h4').html( convertTemp(d.daily[1].temp.max));
+$('._6day .day1 h5').html( convertTemp(d.daily[1].temp.min));
+
+$('._6day .day2 h3').html( displayDay(2));
+$('._6day .day3 h3').html( displayDay(3));
+$('._6day .day4 h3').html( displayDay(4));
+$('._6day .day5 h3').html( displayDay(5));
+$('._6day .day6 h3').html( displayDay(6));
 
 }
 
@@ -35,6 +46,8 @@ function drawWeather( d ) {
 function convertTemp(t){
 
   return Math.round(((parseFloat(t)-273.15)*1.8)+32);
+
+
 
 }
 
@@ -138,13 +151,13 @@ function displayDay(n){
   var d = new Date();
   var weekday = new Array();
 
-  weekday[0] = "Sun";
-  weekday[1] = "Mon";
-  weekday[2] = "Tue";
-  weekday[3] = "Wed";
-  weekday[4] = "Thu";
-  weekday[5] = "Fri";
-  weekday[6] = "Sun";
+  weekday[0] = "SUN";
+  weekday[1] = "MON";
+  weekday[2] = "TUE";
+  weekday[3] = "WED";
+  weekday[4] = "THU";
+  weekday[5] = "FRI";
+  weekday[6] = "SUN";
 
   var dispDay = d.getDay() + n;
 
