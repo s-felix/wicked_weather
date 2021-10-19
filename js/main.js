@@ -31,10 +31,33 @@ $('._6day .day1 h4').html( convertTemp(d.daily[1].temp.max));
 $('._6day .day1 h5').html( convertTemp(d.daily[1].temp.min));
 
 $('._6day .day2 h3').html( displayDay(2));
+$('._6day .day1 .icon').html( printGraphic(d.daily[2].weather[0].description));
+$('._6day .day1 h4').html( convertTemp(d.daily[2].temp.max));
+$('._6day .day1 h5').html( convertTemp(d.daily[2].temp.min));
+
 $('._6day .day3 h3').html( displayDay(3));
+$('._6day .day1 .icon').html( printGraphic(d.daily[3].weather[0].description));
+$('._6day .day1 h4').html( convertTemp(d.daily[3].temp.max));
+$('._6day .day1 h5').html( convertTemp(d.daily[3].temp.min));
+
+
 $('._6day .day4 h3').html( displayDay(4));
+$('._6day .day1 .icon').html( printGraphic(d.daily[4].weather[0].description));
+$('._6day .day1 h4').html( convertTemp(d.daily[4].temp.max));
+$('._6day .day1 h5').html( convertTemp(d.daily[4].temp.min));
+
+
 $('._6day .day5 h3').html( displayDay(5));
+$('._6day .day1 .icon').html( printGraphic(d.daily[5].weather[0].description));
+$('._6day .day1 h4').html( convertTemp(d.daily[5].temp.max));
+$('._6day .day1 h5').html( convertTemp(d.daily[5].temp.min));
+
+
 $('._6day .day6 h3').html( displayDay(6));
+$('._6day .day1 .icon').html( printGraphic(d.daily[6].weather[0].description));
+$('._6day .day1 h4').html( convertTemp(d.daily[6].temp.max));
+$('._6day .day1 h5').html( convertTemp(d.daily[6].temp.min));
+
 
 }
 
