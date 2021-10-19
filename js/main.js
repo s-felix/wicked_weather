@@ -24,6 +24,13 @@ $('.current_weather').click(function(){$('.home').removeClass('open-sesame');})
 function drawWeather( d ) {
 
 $('.current_temp h1').html( convertTemp(d.current.temp) );
+$('.detail .moon').html( printGraphic(d.daily[0].weather[0].description));
+$('.detail .extra .c_high p').html( convertTemp(d.daily[0].temp.max));
+$('.detail .extra .c_low p').html( convertTemp(d.daily[0].temp.min));
+$('.detail .extra .c_sunrise p').html( convertTime(d.current.sunrise) );
+$('.detail .extra .c_sunset p').html( convertTime(d.current.sunset) );
+$('.detail .extra .c_humidity p').html(d.current.humidity);
+$('.detail .extra .c_precipitation p').html(d.current.precipitation);
 
 $('._6day .day1 h3').html( displayDay(1));
 $('._6day .day1 .icon').html( printGraphic(d.daily[1].weather[0].description));

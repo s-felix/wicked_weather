@@ -42,8 +42,11 @@ h1, h4, h5 {
 
 h1 {
   color: white;
-  font-size: 10rem;
+  font-size: 12rem;
   text-shadow: 1px 1px 2px #C39642, 0 0 5px #C39642;
+  padding-left: 4rem;
+  padding-bottom: 1rem;
+  text-align: left;
   margin: 0;
 }
 
@@ -78,16 +81,17 @@ h5 {
 }
 
 .current_weather {
-  background-image: url(../img/snow-01.svg);
   background-color: #2C2C2C;
-  background-repeat: no-repeat;
-  background-size: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1.25fr 1fr;
+
 }
 
 .today {
+  background-image: url(../img/snow-01.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
   text-align: center;
   height: 100%;
 }
@@ -97,8 +101,8 @@ h5 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  background: transparent;
-  padding-top: 10rem;
+  background-color: transparent;
+  padding-top: 1rem;
   padding-bottom: 4rem;
 }
 
@@ -112,9 +116,9 @@ h5 {
 }
 
 .moon img {
-  max-height: 150px;
-  padding-top: 2rem;
-  padding-left: 2rem;
+  padding: 2rem;
+  size: 12rem;
+
 }
 
 .extra {
@@ -147,8 +151,8 @@ h5 {
   grid-template-columns: 1fr 3fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 
 .D {
