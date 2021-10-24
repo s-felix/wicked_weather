@@ -25,12 +25,12 @@ function drawWeather( d ) {
 
 $('.current_temp h1').html( convertTemp(d.current.temp) );
 $('.detail .moon').html( printGraphic(d.daily[0].weather[0].description));
-$('.detail .extra .c_high p').html( convertTemp(d.daily[0].temp.max));
-$('.detail .extra .c_low p').html( convertTemp(d.daily[0].temp.min));
-$('.detail .extra .c_sunrise p').html( convertTime(d.current.sunrise) );
-$('.detail .extra .c_sunset p').html( convertTime(d.current.sunset) );
-$('.detail .extra .c_humidity p').html(d.current.humidity);
-$('.detail .extra .c_precipitation p').html(d.current.precipitation);
+$('.detail .extra .c_high p').html( convertTemp(d.daily[0].temp.max) + '&deg;');
+$('.detail .extra .c_low p').html( convertTemp(d.daily[0].temp.min) + '&deg;');
+$('.detail .extra .c_sunrise p').html( convertTime(d.current.sunrise) + '<span> am</span>' );
+$('.detail .extra .c_sunset p').html( convertTime(d.current.sunset) + '<span> pm</span>');
+$('.detail .extra .c_humidity p').html((d.current.humidity) + '%' );
+$('.detail .extra .c_precipitation p').html((d.daily[0].pop) + '%');
 
 $('._6day .day1 h3').html( displayDay(1));
 $('._6day .day1 .icon').html( printGraphic(d.daily[1].weather[0].description));
@@ -187,7 +187,7 @@ function displayDay(n){
   weekday[3] = "WED";
   weekday[4] = "THU";
   weekday[5] = "FRI";
-  weekday[6] = "SUN";
+  weekday[6] = "SAT";
 
   var dispDay = d.getDay() + n;
 
