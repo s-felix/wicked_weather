@@ -107,7 +107,6 @@ function changeTheme(d){
 
 }
 
-
 /* -----------------------------------------------
    Function for printing weather-specific graphic
    ----------------------------------------------- */
