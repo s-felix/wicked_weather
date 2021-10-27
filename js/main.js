@@ -24,13 +24,13 @@ $('.current_weather').click(function(){$('.home').removeClass('open-sesame');})
 function drawWeather( d ) {
 
 $('.current_temp h1').html( convertTemp(d.current.temp) );
-$('.detail .moon').html( printGraphic(d.daily[0].weather[0].description));
+$('.detail .moon img').html( printMoonGraphic(d.daily[0].moon_phase));
 $('.detail .extra .c_high p').html( convertTemp(d.daily[0].temp.max) + '&deg;');
 $('.detail .extra .c_low p').html( convertTemp(d.daily[0].temp.min) + '&deg;');
 $('.detail .extra .c_sunrise p').html( convertTime(d.current.sunrise) + '<span> am</span>' );
 $('.detail .extra .c_sunset p').html( convertTime(d.current.sunset) + '<span> pm</span>');
 $('.detail .extra .c_humidity p').html((d.current.humidity) + '%' );
-$('.detail .extra .c_precipitation p').html((d.daily[0].pop) + '%');
+$('.detail .extra .c_precipitation p').html( convertPop(d.daily[0].pop) + '%');
 
 $('._6day .day1 h3').html( displayDay(1));
 $('._6day .day1 .icon').html( printGraphic(d.daily[1].weather[0].description));
@@ -65,6 +65,7 @@ $('._6day .day6 .icon').html( printGraphic(d.daily[6].weather[0].description));
 $('._6day .day6 h4').html( convertTemp(d.daily[6].temp.max));
 $('._6day .day6 h5').html( convertTemp(d.daily[6].temp.min));
 
+changeTheme( d.current.weather[0].description );
 
 }
 
@@ -77,8 +78,11 @@ function convertTemp(t){
 
   return Math.round(((parseFloat(t)-273.15)*1.8)+32);
 
+}
 
+function convertPop(t){
 
+  return t * 100;
 }
 
 
@@ -132,6 +136,39 @@ function printGraphic(d){
 
 }
 
+function printMoonGraphic(d){
+  
+  // .5 is a full moon
+  if( d == .5 ) {
+    return '<img src="img/svg/Moon-Full.svg" alt="Moon icon">';
+  
+  // .25 is a new moon
+  } else if( d == .25 ) {
+    return '<img src="img/svg/Moon-New.svg" alt="Moon icon">';
+  
+  // .75 is a last quarter moon
+  } else if( d == .75 ) {
+    return '<img src="img/svg/Moon-Last-Quarter.svg" alt="Moon icon">';
+
+  // less than .25 is a waxing crescent moon
+  } else if( d < .25 ) {
+    return '<img src="img/svg/Moon-Waxing-Crescent.svg" alt="Moon icon">';
+
+  // greater than .25 but less than .5 is a waxing gibbous moon
+  } else if( d > .25 || d < .5 ) {
+    return '<img src="img/svg/Moon-Waxing-Gibbous.svg" alt="Moon icon">';
+
+  // greater than .5 but less than .75 is a waning gibbous moon
+  } else if( d > .5 || d < .75 ) {
+    return '<img src="img/svg/Moon-Waning-Gibbous.svg" alt="Moon icon">';
+
+  // greater than .75 but less than 1 is a waning crescent moon
+  } else if( d > .75 || d < 1 ) {
+    return '<img src="img/svg/Moon-Waning-Crescent.svg" alt="Moon icon">';
+  
+  }
+
+}
 
 /* -----------------------------------------------
    Function for converting time to hours/minutes
