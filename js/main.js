@@ -104,6 +104,9 @@ function changeTheme(d){
   } else if( d.indexOf('sunny') > 0 ) {
     $('body').addClass('sunny');
 
+} else if( d.indexOf('snow') > 0 ) {
+    $('body').addClass('snow');
+
   // if none of those cases are true, assume it's clear
   } else {
     $('body').addClass('clear');
