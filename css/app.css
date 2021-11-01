@@ -143,7 +143,6 @@ h5 {
   grid-template-rows: 1fr;
   padding-top: 1rem;
   padding-bottom: 4rem;
-  line-height: 1;
 }
 
 .detail p {
@@ -158,6 +157,7 @@ h5 {
 
 .moon img {
   size: 11rem;
+  padding: 1.5rem;
 
 }
 
