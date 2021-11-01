@@ -3,8 +3,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st0{fill:#F2EFDD;}
 </style>
-<path class="st0" d="M50,62c-6.6,0-12-5.4-12-12c0-6.6,5.4-12,12-12s12,5.4,12,12C62,56.6,56.6,62,50,62z M50,42c-4.4,0-8,3.6-8,8
-	c0,4.4,3.6,8,8,8s8-3.6,8-8C58,45.6,54.4,42,50,42z"/>
+<circle class="st0" cx="50.1" cy="50.1" r="47.6"/>
 </svg>

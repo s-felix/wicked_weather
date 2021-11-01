@@ -153,12 +153,12 @@ h5 {
   grid-column: 1;
   align-content: center;
   justify-content: center;
+  width: 11rem;
 }
 
 .moon img {
-  size: 11rem;
-  padding: 1.5rem;
-
+  width: 150px;  
+  padding: 2rem;
 }
 
 .extra {
